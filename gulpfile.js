@@ -1,29 +1,35 @@
 var gulp = require('gulp');
-var sass = require('gulp-ruby-sass');
+var sass = require('gulp-sass');
 var jade = require('gulp-jade');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var coffee = require('gulp-coffee');
 
-gulp.task('default', ['styles']);
+gulp.task('default', ['sass', 'jade', 'watch']);
 
-gulp.task('styles', function () {
-    gulp.src('src/sass/**/*.sass')
-        .pipe(sass({
-            style: 'compressed'
-        }))
-        .pipe(gulp.dest('build/css/'));
-    gulp.src('src/sass/**/*.scss')
-        .pipe(sass({
-            style: 'compressed'
-        }))
-        .pipe(gulp.dest('build/css/'));
+gulp.task('sass', function() {
+    gulp.src('./src/sass/**/*.sass')
+		.pipe(sass({indentedSyntax: true}))
+		.pipe(gulp.dest('./dist/css/'));
 });
 
-gulp.task('watch', function () {
-    gulp.watch('src/sass/**/*.scss', ['styles']);
-    gulp.watch('src/sass/**/*.sass', ['styles']);
+gulp.task('jade', function() {
+  	gulp.src('./src/jade/*.jade')
+		.pipe(jade({pretty: true}))
+		.pipe(gulp.dest('./dist/'));
+});
+		  
+
+gulp.task('watch', function() {
+    
 });
 
-gulp.tast('jade', function(){
-  	return gulp.src([]);
-};
+
+
+gulp.task('coffee', function() {
+	gulp.src('./src/coffee/*.coffee')
+		.pipe(coffee())
+		.pipe(concat('scripts.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest('./dist/js/'));
+});
