@@ -6,7 +6,7 @@ var uglify = require('gulp-uglify');
 var coffee = require('gulp-coffee');
 var browserSync = require('browser-sync').create();
 
-gulp.task('default', ['serve']);
+gulp.task('default', ['jade', 'sass', 'coffee', 'serve']);
 
 gulp.task('sass', function() {
     gulp.src('./src/sass/**/*.sass')
@@ -31,16 +31,13 @@ gulp.task('coffee', function() {
 		.pipe(browserSync.reload({stream:true}));
 });
 
-
 gulp.task('serve', function() {
-	browserSync.init({
+    browserSync.init({
 		server: {
             baseDir: "./dist/"
         }
 	});
-	
 	gulp.watch('./src/sass/**/*.sass', ['sass']);
 	gulp.watch('./src/jade/**/*.jade', ['jade']);
 	gulp.watch('./src/coffee/**/*.coffee', ['coffee']);
-	
 });
