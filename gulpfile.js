@@ -34,7 +34,7 @@ gulp.task('image', function () {
 gulp.task('js', function () {
    gulp.src('.src/js/*')
         .pipe(uglify())
-        .pipe(gulp.dest('.build/js);
+        .pipe(gulp.dest('.build/js'));
 });
 
 gulp.task('coffee', function() {
