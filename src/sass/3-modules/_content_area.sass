@@ -1,0 +1,54 @@
+.container
+  +outer-container
+.content-area.strict-height
+  +media($mobile)
+    min-height: 200px
+  +media($desktop)
+    height: 440px
+.content-area
+  width: 100%
+  font-weight: 300
+  overflow: hidden
+  .content
+    position: relative
+    height: 100%
+    padding: 60px
+    .subtitle
+      font-weight: 200
+      margin: 7px 0 20px 0
+    +media($mobile)
+      +span-columns(12)
+    +media($desktop)
+      +span-columns(6, block-collapse)
+  .content.image
+    @extend .content
+    padding: 0
+    overflow: hidden
+    background-size: cover
+    background-position: center
+    min-height: 300px
+    height: 100%
+    &::after
+      content: 'image'
+      color: transparent
+      bottom: 0
+    img
+      width: 100%
+  .content.info
+    +span-columns(8)
+    +shift(2)
+    overflow: hidden
+    padding:  60px
+    padding-bottom: 0
+    &:last-of-type
+      padding-bottom: 60px
+    height: auto
+.brand
+  background-color: $brand-primary
+  color: $white
+.white
+  background-color: $white
+  color: $brand-primary
+.dark
+  background-color: $black
+  color: $white

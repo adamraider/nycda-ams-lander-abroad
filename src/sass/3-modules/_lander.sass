@@ -1,0 +1,56 @@
+.lander
+  width: 100%
+  +linear-gradient(to right, tint($brand-primary, 20%), tint($brand-primary, 10%))
+  background-image: url('https://images.unsplash.com/photo-1438804507856-d05d2d17e5b7?dpr=2&fit=crop&fm=jpg&h=725&ixjsv=2.0.0&ixlib=rb-0.3.5&q=50&w=1300')
+  background-size: cover
+  color: $white
+  .content
+    background-color: transparentize($black, 0.6)
+    padding: 60px 0
+    margin: 0 auto
+    +align-items(center)
+    +flex-direction(column)
+    +justify-content(center)
+    .lander-info
+      // padding: 0 60px 60px 60px
+      // box-sizing: border-box
+      +media($mobile)
+        margin: 10% 60px 40px 60px
+      +media($desktop)
+        margin: 10% 40px 40px 60px
+      p
+        text-align: justify
+        font-size: 18px
+    form
+      padding: 30px 10px
+      box-sizing: border-box
+      +media($mobile)
+        margin: 0
+      +media($desktop)
+        margin: 20px 40px 40px 40px
+      .form-title
+        text-align: center
+        font-weight: 200
+        margin: 0 0 28px 0
+      input
+        border: 3px solid $white
+        background: $white
+        width: 100%
+        padding: 8px 12px
+        color: $brand-primary
+        margin-bottom: 12px
+        transition: all 0.1s ease-in
+        &:active, &:focus
+          border-bottom: 3px solid $link-color
+          outline: none
+      input[type="submit"]
+        background-color: $brand-primary
+        border: none
+        padding: 14px 18px
+        color: $white
+        font-weight: 600
+        margin-bottom: 0
+        &:active, &:focus, &:hover
+          background-color: shade($brand-primary, 5%)
+          border: none
+          outline: none
