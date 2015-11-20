@@ -4,7 +4,7 @@
   +media($mobile)
     min-height: 200px
   +media($desktop)
-    height: 440px
+    height: 450px
 .content-area
   width: 100%
   font-weight: 300
@@ -35,8 +35,11 @@
     img
       width: 100%
   .content.info
-    +span-columns(8)
-    +shift(2)
+    +media($mobile)
+      +span-columns(12)
+    +media($desktop)
+      +span-columns(8)
+      +shift(2)
     overflow: hidden
     padding:  60px
     padding-bottom: 0

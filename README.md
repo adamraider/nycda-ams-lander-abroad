@@ -2,7 +2,9 @@ NYCDA Amsterdam Lander
 ==============
 
 ## Instructions
-    git clone http://github.com/adamraider/nycda-ams-lander.git nycda-ams-lander
-    cd new-project
-    npm install
-    gulp
+```bash
+  git clone http://github.com/adamraider/nycda-ams-lander-abroad.git nycda-ams-lander-abroad
+  cd nycda-ams-lander-abroad
+  npm install
+  gulp
+```
