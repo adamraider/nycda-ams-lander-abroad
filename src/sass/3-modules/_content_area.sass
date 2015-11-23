@@ -2,8 +2,10 @@
   +outer-container
 .content-area.strict-height
   +media($mobile)
+    height: auto !important
     min-height: 200px
   +media($desktop)
+
     height: 450px
 .content-area
   width: 100%
@@ -26,7 +28,7 @@
     overflow: hidden
     background-size: cover
     background-position: center
-    min-height: 300px
+    min-height: 400px
     height: 100%
     &::after
       content: 'image'
