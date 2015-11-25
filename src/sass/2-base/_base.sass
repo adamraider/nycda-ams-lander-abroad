@@ -1,6 +1,9 @@
 body
   background: transparent
-  font-size: 17px
+  +media($mobile)
+    font-size: 16px
+  +media($desktop)
+    font-size: 18px
   line-height: 1.6
   font-family: $font-stack
   -webkit-font-smoothing: antialiased
@@ -17,20 +20,20 @@ h1, h2, h3, h4, h5, h6
   letter-spacing: -2px
 
 .huge, h1
-  font-size: 56px
+  font-size: 3.1em
   line-height: 1.05
   letter-spacing: -1px
 
 .large, h2
-  font-size: 36px
+  font-size: 2.9em
   line-height: 1.14
 
 .bigger, h3
-  font-size: 26px
+  font-size: 2.2em
   line-height: 1.38
 
 .big, h4
-  font-size: 22px
+  font-size: 2em
   line-height: 1.38
 
 .small, small
@@ -39,6 +42,7 @@ h1, h2, h3, h4, h5, h6
 
 p
   margin: 0 0 20px 0
+  font-size: 1em
 
 em
   font-style: italic

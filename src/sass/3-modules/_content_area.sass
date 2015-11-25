@@ -5,7 +5,6 @@
     height: auto !important
     min-height: 200px
   +media($desktop)
-
     height: 450px
 .content-area
   width: 100%
@@ -14,13 +13,14 @@
   .content
     position: relative
     height: 100%
-    padding: 60px
     .subtitle
       font-weight: 200
       margin: 7px 0 20px 0
     +media($mobile)
       +span-columns(12)
+      padding: 60px 30px
     +media($desktop)
+      padding: 60px
       +span-columns(6, block-collapse)
   .content.image
     @extend .content
