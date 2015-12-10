@@ -43,3 +43,29 @@ function strictHeightMatch(){
 		content.style.height = height + "px"
 	}
 }
+
+$(document).ready(function(){
+	function getQueryVariable(variable) {
+		var query = window.location.search.substring(1);
+		var vars = query.split('&');
+		for(var i = 0; i < vars.length; i++) {
+			var pair = vars[i].split('=');
+			if (decodeURIComponent(pair[0]) == variable) {
+				return decodeURIComponent(pair[1]);
+			}
+		}
+	}
+	var utms = ["utm_source", "utm_campaign", "utm_medium", "utm_keyword"];
+	$.each(utms, function(index, variable){
+		var value = getQueryVariable(variable);
+		if(value !== undefined){
+			Cookies.set(variable, value);
+		}
+		if($("[name='"+variable+"']") != undefined){
+			var cookie_value = Cookies.get(variable);
+			if(cookie_value != undefined){
+				$("[name='"+variable+"']").val(cookie_value);
+			}
+		}
+	});
+})
